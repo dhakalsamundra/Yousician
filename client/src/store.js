@@ -2,14 +2,12 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import thunk from 'redux-thunk';
 
-import anecdotesReducer from './reducers/anecdoteReducer';
-import notificationReducer from './reducers/notificationReducer';
-import filterReducer from './reducers/filterReducer';
+import SearchReducer from './reducers/searchReducer';
+import songReducer from './reducers/songReducer';
 
 const reducer = combineReducers({
-  data: anecdotesReducer,
-  notification: notificationReducer,
-  filteredData: filterReducer,
+  data: songReducer,
+  searchedData: SearchReducer
 });
 
 const store = createStore(reducer, composeWithDevTools(applyMiddleware(thunk)));
