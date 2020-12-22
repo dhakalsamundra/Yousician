@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "Basic fake api for assignment",
   "scripts": {
-    "start-api": "json-server --watch db.json --port 3004 --delay 700"
+    "start-api": "json-server --watch db.json --port 3004 --delay 700",
+    "client": "cd ../client && npm start",
+    "dev": "concurrently \"npm run start-api\" \"npm run client\""
   },
   "dependencies": {
     "json-server": "^0.15.0"
