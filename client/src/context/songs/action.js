@@ -10,8 +10,6 @@ import {
   SEARCH_SONG,
   CLEAR_SEARCH,
   SONG_ERROR,
-  SET_CURRENT,
-  CLEAR_CURRENT
 } from '../types'
 
 const SongState = props => {
@@ -19,7 +17,6 @@ const SongState = props => {
     songs: null,
     filtered: null,
     error: null,
-    current: null
   }
 
   const [state, dispatch] = useReducer(songReducer, initialState)
@@ -81,18 +78,8 @@ const SongState = props => {
   }
 
   // Clear Filter
-  const clearFilter = () => {
+  const clearSearch = () => {
     dispatch({ type: CLEAR_SEARCH })
-  }
-
-  // Set Current Contact
-  const setCurrent = song => {
-    dispatch({ type: SET_CURRENT, payload: song })
-  }
-
-  // Clear Current Contact
-  const clearCurrent = () => {
-    dispatch({ type: CLEAR_CURRENT })
   }
 
   return (
@@ -106,9 +93,7 @@ const SongState = props => {
         addToFav,
         deleteFromFav,
         searchSong,
-        clearFilter,
-        setCurrent,
-        clearCurrent
+        clearSearch
       }}
     >
       {props.children}

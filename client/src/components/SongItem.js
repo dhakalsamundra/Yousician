@@ -3,19 +3,22 @@ import SongContext from '../context/songs/context'
 
 const ContactItem = ({ song }) => {
   const songContext = useContext(SongContext)
-  const { deleteFromFav, setCurrent, clearCurrent } = songContext
+  const { deleteFromFav, AddToFav } = songContext
 
   const { _id, title, artist, images, level, /*search*/ } = song
 
-  const onDelete = () => {
+  const onDeleteFromFav = () => {
     deleteFromFav(_id)
-    clearCurrent()
+  }
+
+  const onAddToFav = () => {
+    AddToFav(_id)
   }
 
   return (
     <div className='card bg-light'>
       <div>
-        <img src={images} alt="song image" /></div>
+        <img src={images} alt="song" /></div>
       <h3 className='text-primary text-center'>
         {title}{' '}
       </h3>
@@ -27,14 +30,14 @@ const ContactItem = ({ song }) => {
           {level}
         </li>
       </ul>
-      <div className='btn btn-right'>
+      <div>
         <button
           className='btn btn-dark btn-sm'
-          onClick={() => setCurrent(song)}
+          onClick={onAddToFav}
         >
           addToFav
         </button>
-        <button className='btn btn-danger btn-sm' onClick={onDelete}>
+        <button className='btn btn-danger btn-sm' onClick={onDeleteFromFav}>
         deleteFromFav
         </button>
       </div>

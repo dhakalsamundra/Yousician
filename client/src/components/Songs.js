@@ -1,13 +1,13 @@
 import React, { Fragment, useContext, useEffect } from 'react'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
-import ContactItem from './ContactItem'
+import SongItem from './SongItem'
 import Spinner from './Spinner'
-import ContactContext from '../context/songs/context'
+import SongContext from '../context/songs/context'
 
 const Contacts = () => {
-  const contactContext = useContext(ContactContext)
+  const songContext = useContext(SongContext)
 
-  const { songs, filtered, getSongs, loading } = contactContext
+  const { songs, filtered, getSongs, loading } = songContext
 
   useEffect(() => {
     getSongs()
@@ -25,7 +25,7 @@ const Contacts = () => {
                 timeout={500}
                 classNames='item'
               >
-                <ContactItem song={song} />
+                <SongItem song={song} />
               </CSSTransition>
             ))
             : songs.map((song, id) => (
@@ -34,7 +34,7 @@ const Contacts = () => {
                 timeout={500}
                 classNames='item'
               >
-                <ContactItem song={song} />
+                <SongItem song={song} />
               </CSSTransition>
             ))}
         </TransitionGroup>

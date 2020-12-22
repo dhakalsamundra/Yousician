@@ -5,7 +5,7 @@ const ContactFilter = () => {
   const songContext = useContext(SongContext)
   const text = useRef('')
 
-  const { searchSong, clearFilter, filtered } = songContext
+  const { searchSong, clearSearch, filtered } = songContext
 
   useEffect(() => {
     if (filtered === null) {
@@ -17,7 +17,7 @@ const ContactFilter = () => {
     if (text.current.value !== '') {
       searchSong(e.target.value)
     } else {
-      clearFilter()
+      clearSearch()
     }
   }
 

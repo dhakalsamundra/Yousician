@@ -1,13 +1,13 @@
 import React from 'react'
-import Contacts from '../components/Contacts'
-import ContactFilter from '../components/ContactFilter'
+import Songs from '../components/Songs'
+import SongFilter from '../components/Search'
 
 const Home = () => {
   return (
     <div className='grid-2'>
       <div>
-        <ContactFilter />
-        <Contacts />
+        <SongFilter />
+        <Songs />
       </div>
     </div>
   )

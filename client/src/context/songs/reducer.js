@@ -5,8 +5,6 @@ import {
   SEARCH_SONG,
   CLEAR_SEARCH,
   SONG_ERROR,
-  SET_CURRENT,
-  CLEAR_CURRENT
 } from '../types'
 
 export default (state, action) => {
@@ -35,16 +33,6 @@ export default (state, action) => {
     return {
       ...state,
       filtered: null,
-    }
-  case SET_CURRENT:
-    return {
-      ...state,
-      current: action.payload
-    }
-  case CLEAR_CURRENT:
-    return {
-      ...state,
-      current: null
     }
   case SEARCH_SONG:
     return {
