@@ -15,6 +15,7 @@ const Contacts = () => {
   }, []);
 
   return (
+    <div className='container-2'>
     <Fragment>
       {songs !== null && !loading ? (
         <TransitionGroup>
@@ -42,6 +43,7 @@ const Contacts = () => {
         <Spinner />
       )}
     </Fragment>
+    </div>
   )
 }
 
