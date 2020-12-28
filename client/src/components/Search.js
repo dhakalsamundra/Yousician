@@ -22,6 +22,9 @@ const ContactFilter = () => {
   }
 
   return (
+    <div className='container-1'>
+      <h1>NEW SONGS DELIVERED EVERY WEEKS</h1>
+      <p>Here are the most recent additions to the Yousician App. Start playing today!</p>
     <form>
       <input
         ref={text}
@@ -31,6 +34,7 @@ const ContactFilter = () => {
         onChange={onChange}
       />
     </form>
+    </div>
   )
 }
 
