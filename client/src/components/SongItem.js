@@ -1,18 +1,22 @@
 import React, { useContext } from "react";
+
+import { IconButton } from '@material-ui/core'
+import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
+
 import SongContext from "../context/songs/context";
 
 const ContactItem = ({ song }) => {
   const songContext = useContext(SongContext);
-  const { deleteFromFav, AddToFav } = songContext;
+  const { deleteFromFav, addToFav } = songContext;
 
-  const { _id, title, artist, images, level /*search*/ } = song;
+  const { _id, title, artist, images, level } = song;
 
   const onDeleteFromFav = () => {
     deleteFromFav(_id);
   };
 
-  const onAddToFav = () => {
-    AddToFav(_id);
+  const handleAddFav = () => {
+    addToFav(_id);
   };
 
   return (
@@ -29,9 +33,13 @@ const ContactItem = ({ song }) => {
 
       <div className="song-icon">
         <h3 className="text-primary text-center">{level} </h3>
-          <button className="btn btn-dark btn-sm" onClick={onAddToFav}>
-            addToFav
-          </button>
+        <IconButton
+                color="secondary"
+                aria-label="delete book"
+                onClick={() => handleAddFav(_id)}
+              >
+            <FavoriteBorderIcon />
+          </IconButton>
         </div>
 
     </div>
