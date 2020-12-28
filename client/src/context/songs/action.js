@@ -24,7 +24,7 @@ const SongState = props => {
   // Get Contacts
   const getSongs = async () => {
     try {
-      const res = await axios.get('/songs')
+      const res = await axios.get('http://localhost:3004/songs')
 
       dispatch({
         type: GET_SONG,
@@ -33,7 +33,7 @@ const SongState = props => {
     } catch (err) {
       dispatch({
         type: SONG_ERROR,
-        payload: err.response.msg
+        payload: err
       })
     }
   }
@@ -41,7 +41,7 @@ const SongState = props => {
   // Add Contact
   const addToFav = async contact => {
     try {
-      const res = await axios.post('/favorites', contact)
+      const res = await axios.post('http://localhost:3004/favorites', contact)
 
       dispatch({
         type: ADD_TO_FAV,
@@ -58,7 +58,7 @@ const SongState = props => {
   // Delete Contact
   const deleteFromFav = async id => {
     try {
-      await axios.delete(`/favorites/${id}`)
+      await axios.delete(`http://localhost:3004/favorites/${id}`)
 
       dispatch({
         type: DELETE_FROM_FAV,

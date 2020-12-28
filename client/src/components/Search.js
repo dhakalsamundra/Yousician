@@ -23,8 +23,10 @@ const ContactFilter = () => {
 
   return (
     <div className='container-1'>
+      <div className='info'>
       <h1>NEW SONGS DELIVERED EVERY WEEKS</h1>
       <p>Here are the most recent additions to the Yousician App. Start playing today!</p>
+      </div>
     <form>
       <input
         ref={text}

@@ -33,15 +33,15 @@ The font is Montserrat
 
 The following color palette is used
 
-    #000000
-    #101010
+    #000000 // black
+    #101010 //black
+    #383635 // light black
     #383635
-    #383635
-    #939393
-    #ffffff
-    #6fc13e
-    #ff8e00
-    #dc001c
+    #939393 // paragraph light light black
+    #ffffff // white
+    #6fc13e // green
+    #ff8e00 // orange
+    #dc001c // red
 
 
 ## AVAILABLE APIs:
