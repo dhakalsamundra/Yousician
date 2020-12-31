@@ -32,8 +32,8 @@ const SongItem = ({ song }) => {
         </div>
 
         <div className="song-1">
-          <h4>{title}</h4>
-          <h6>{artist} </h6>
+          <p>{title}</p>
+          <p className='artist'>{artist} </p>
         </div>
       </div>
 
