@@ -1,43 +1,32 @@
-import React, { useContext, useRef, useEffect } from 'react'
-import SongContext from '../context/songs/context'
+import React, { useRef } from 'react'
+import icon from '../assets/icons/search.svg'
 
-const ContactFilter = () => {
-  const songContext = useContext(SongContext)
+const Search = () => {
   const text = useRef('')
 
-  const { searchSong, clearSearch, filtered } = songContext
-
-  useEffect(() => {
-    if (filtered === null) {
-      text.current.value = ''
-    }
-  })
-
   const onChange = e => {
-    if (text.current.value !== '') {
-      searchSong(e.target.value)
-    } else {
-      clearSearch()
-    }
+    e.target.value()
   }
 
   return (
-    <div className='container-1'>
+    <div className='search-Container'>
+
       <div className='info'>
-      <h1>NEW SONGS DELIVERED EVERY WEEKS</h1>
-      <p>Here are the most recent additions to the Yousician App. Start playing today!</p>
+        <h1>NEW SONGS DELIVERED EVERY WEEKS</h1>
+        <p>Here are the most recent additions to the Yousician App. Start playing today!</p>
       </div>
-    <form>
-      <input
-        ref={text}
-        className='search'
-        type='text'
-        placeholder='Search for song by artist or title'
-        onChange={onChange}
-      />
-    </form>
+
+      <form className='search'>
+        <img src={icon} alt='search' />
+        <input
+          ref={text}
+          type='text'
+          className='search-placeholder'
+          placeholder='Search for song by artist or title'
+          onChange={onChange}
+        /></form>
     </div>
   )
 }
 
-export default ContactFilter
+export default Search

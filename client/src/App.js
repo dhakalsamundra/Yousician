@@ -1,16 +1,13 @@
-import React from 'react'
-import SongState from './context/songs/action'
-import Routes from './Routes'
-import './App.css'
+import React from "react";
+import Routes from "./Routes";
+import "./App.css";
 
 const App = () => {
   return (
-    <SongState>
-        <div className='container'>
-          <Routes />
-        </div>
-    </SongState>
-  )
-}
+    <div className="container">
+      <Routes />
+    </div>
+  );
+};
 
-export default App
+export default App;

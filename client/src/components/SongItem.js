@@ -1,49 +1,53 @@
-import React, { useContext } from "react";
+import React from "react";
+import axios from "axios";
+import { IconButton } from "@material-ui/core";
+import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 
-import { IconButton } from '@material-ui/core'
-import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
+const baseUrl = "http://localhost:3004/favorites";
 
-import SongContext from "../context/songs/context";
-
-const ContactItem = ({ song }) => {
-  const songContext = useContext(SongContext);
-  const { deleteFromFav, addToFav } = songContext;
-
-  const { _id, title, artist, images, level } = song;
+const SongItem = ({ song }) => {
+  const { id, title, artist, images, level } = song;
 
   const onDeleteFromFav = () => {
-    deleteFromFav(_id);
+    const response = axios.post(baseUrl, song);
+    return response.data;
   };
 
-  const handleAddFav = () => {
-    addToFav(_id);
+  const handleAddFav = (id) => {
+    const song = {
+      songId: id,
+    };
+    console.log('samundra', id)
+    console.log('data', song)
+    const response = axios.post(baseUrl, song);
+    return response.data;
   };
 
   return (
     <div className="details">
-      <div className="card bg-light song">
+      <div className="card">
         <div>
           <img src={images} alt="song" />
         </div>
+
         <div className="song-1">
-          <h3 className="text-primary text-center">{title} </h3>
-          <h3 className="text-primary text-center">{artist} </h3>
+          <h4>{title}</h4>
+          <h6>{artist} </h6>
         </div>
-        </div>
+      </div>
 
       <div className="song-icon">
-        <h3 className="text-primary text-center">{level} </h3>
+        <div className='level'><h3>{level}</h3></div>
         <IconButton
-                color="secondary"
-                aria-label="delete book"
-                onClick={() => handleAddFav(_id)}
-              >
-            <FavoriteBorderIcon />
-          </IconButton>
-        </div>
-
+          color="secondary"
+          aria-label="delete book"
+          onClick={() => handleAddFav(id)}
+        >
+          <FavoriteBorderIcon />
+        </IconButton>
+      </div>
     </div>
   );
 };
 
-export default ContactItem;
+export default SongItem;
