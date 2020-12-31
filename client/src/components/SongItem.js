@@ -1,7 +1,8 @@
 import React from "react";
 import axios from "axios";
-import { IconButton } from "@material-ui/core";
-import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
+
+import FavoriteBorder from '../assets/icons/favorite_border.svg'
+import Favorite from '../assets/icons/favorite.svg'
 
 const baseUrl = "http://localhost:3004/favorites";
 
@@ -38,13 +39,13 @@ const SongItem = ({ song }) => {
 
       <div className="song-icon">
         <div className='level'><h3>{level}</h3></div>
-        <IconButton
+        <button
           color="secondary"
           aria-label="delete book"
           onClick={() => handleAddFav(id)}
         >
-          <FavoriteBorderIcon />
-        </IconButton>
+          <img src={Favorite} className='svgFav'/>
+        </button>
       </div>
     </div>
   );

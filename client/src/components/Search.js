@@ -16,15 +16,18 @@ const Search = () => {
         <p>Here are the most recent additions to the Yousician App. Start playing today!</p>
       </div>
 
-      <form className='search'>
-        <img src={icon} alt='search' />
+      <div className='search'>
+      <form>
         <input
           ref={text}
           type='text'
           className='search-placeholder'
           placeholder='Search for song by artist or title'
           onChange={onChange}
-        /></form>
+        />
+        <img style= {{ width: '12px'}} src={icon} alt='search icon'/>
+      </form>
+      </div>
     </div>
   )
 }
