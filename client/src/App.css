@@ -43,6 +43,7 @@ body {
   color: #ffffff;
   text-align: center;
   height: 250px;
+  margin-bottom: 1rem;
   background-image: url('./assets/yousician-hero.png');
 }
 .info{
@@ -202,4 +203,61 @@ textarea {
     width: 100%;
     margin-left: 0;
   }
+}
+
+.filter{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  color: #ffffff;
+  border-radius: 25px;
+  margin-left: 49rem;
+  margin-bottom: 1rem;
+  font-size: 12px;
+  height: 25px;
+  width: 205px;
+}
+.filter span{
+  margin-top: 8px;
+  margin-left: 5px;
+  font-size: 10px;
+}
+.filter-icon{
+  border-radius: 25px;
+  flex-direction: row;
+  justify-content: flex-start;
+  border: 1px solid white;
+  flex-direction: row;
+  width: 80px;
+  height: 25px;
+  margin-top: -2px;
+  margin-left: 1rem;
+}
+.filter-icon p{
+  color: #ffffff;
+  width: 40px;
+  height: 50px;
+  margin-left: 10px;
+  margin-top: 3px;
+  filter: brightness(200%);
+  font-weight: 500;
+
+}
+.img-filter{
+  border-radius: 50%;
+  background-color: #ffffff;
+  height: 25px;
+  width: 25px;
+  margin-top: -3.3rem;
+  margin-left: 3.5rem;
+}
+.img-filter img{
+  position: absolute;
+  border-radius: 50%;
+  width: 50px;
+  height: 12px;
+  text-align: center;
+  margin-top: 2px;
+  top: 16.9rem;
+  right: 18.5rem;
 }
