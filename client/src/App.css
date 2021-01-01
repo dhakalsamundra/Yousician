@@ -20,7 +20,9 @@ h1,h4{
 
 }
 body {
-  background-color:hsl(0, 0%, 8%);}
+  background-color:hsl(0, 3%, 6%);
+
+}
 .card img {
   width: 50px;
   height: 50px;
