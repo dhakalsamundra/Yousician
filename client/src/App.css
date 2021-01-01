@@ -15,7 +15,7 @@ p{
   font-size: 15px;
   font-weight: 100;
 }
-h1,h6,h4{
+h1,h4{
   color: var(--primary-color);
 
 }
@@ -26,7 +26,6 @@ body {
   width: 50px;
   height: 50px;
   margin: 1.2rem 1rem 1rem 0.5rem;
-  border: 2px solid green;
 }
 .container {
     margin: auto;
@@ -106,7 +105,6 @@ body {
   width: 53%;
   height: 60px;
   margin-left: 25%;
-  border: 2px solid blue;
 }
 .details:nth-child(odd){
   background-color:hsl(0, 0%, 8%);
@@ -131,16 +129,18 @@ body {
   justify-items: flex-start;
   margin-left: -1%;
   height: 50px;
-  font-size: 14px;
-  color: #ffffff;
-  border: 3px solid red;
 }
-.song-1 p{
-  font-size: 15px;
-  color: #ffffff;
+.title{
+  font-size: 12px;
+  color: #f6f6f8;
+  margin-top: 5px;
+  filter: brightness(200%);
+  font-weight: 300;
 }
 .artist{
-  margin-top: 5px;
+  font-weight: 100;
+  color: #d1cccc;
+  filter: brightness(90%);
 }
 
 .song-1 h4 {
@@ -167,10 +167,17 @@ body {
 }
 .level{
   border-radius: 50%;
+  border: 4px solid white;
+  width: 20%;
   text-align: center;
-  justify-content: space-between;
+  justify-content: center;
   color: #ffffff;
-  margin-top: 12px;
+  margin-top: 15px;
+}
+.level p {
+  color: #f6f6f8;
+  margin-top: 3px;
+  filter: brightness(200%);
 }
 input {
   margin: 1.2rem;

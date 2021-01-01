@@ -32,13 +32,13 @@ const SongItem = ({ song }) => {
         </div>
 
         <div className="song-1">
-          <p>{title}</p>
+          <p className='title'>{title}</p>
           <p className='artist'>{artist} </p>
         </div>
       </div>
 
       <div className="song-icon">
-        <div className='level'><h3>{level}</h3></div>
+        <div className='level'><p>{level}</p></div>
         <button
           color="secondary"
           aria-label="delete book"
