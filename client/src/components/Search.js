@@ -16,12 +16,11 @@ const Search = () => {
     <div className='search-Container'>
 
       <div className='info'>
-        <h1>NEW SONGS DELIVERED EVERY WEEKS</h1>
+        <h1>NEW SONGS DELIVERED EVERY WEEK</h1>
         <p>Here are the most recent additions to the Yousician App. Start playing today!</p>
       </div>
 
-      <div className='search'>
-      <form>
+      <form className='search'>
         <input
           ref={text}
           type='text'
@@ -32,7 +31,7 @@ const Search = () => {
         />
         <img style= {{ width: '12px'}} src={icon} alt='search icon'/>
       </form>
-      </div>
+
     </div>
   )
 }

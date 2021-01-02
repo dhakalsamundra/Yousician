@@ -14,9 +14,9 @@ const Songs = () => {
     dispatch(fetchSongsThunk())
   }, [dispatch])
 
-  if(songs === null){
-    return <Spinner />
-  }
+  // if(songs === null){
+  //   return <Spinner />
+  // }
 
   return (
     <div>
