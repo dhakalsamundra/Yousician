@@ -1,11 +1,15 @@
 import React, { useRef } from 'react'
+import { useDispatch } from 'react-redux'
+
+import { searchSong } from '../redux/actions/songAction'
 import icon from '../assets/icons/search.svg'
 
 const Search = () => {
   const text = useRef('')
+  const dispatch = useDispatch()
 
   const onChange = e => {
-    e.target.value()
+    dispatch(searchSong(e.target.value))
   }
 
   return (
@@ -24,6 +28,7 @@ const Search = () => {
           className='search-placeholder'
           placeholder='Search for song by artist or title'
           onChange={onChange}
+          aria-label='search'
         />
         <img style= {{ width: '12px'}} src={icon} alt='search icon'/>
       </form>

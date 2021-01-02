@@ -1,18 +1,19 @@
 import React from "react";
-import axios from "axios";
+import { useDispatch } from 'react-redux'
 
-import FavoriteBorder from '../assets/icons/favorite_border.svg'
+import {  addToFavThunk } from '../redux/actions/songAction'
+// import FavoriteBorder from '../assets/icons/favorite_border.svg'
 import Favorite from '../assets/icons/favorite.svg'
 
-const baseUrl = "http://localhost:3004/favorites";
 
 const SongItem = ({ song }) => {
+
+  const dispatch = useDispatch()
   const { id, title, artist, images, level } = song;
 
-  const onDeleteFromFav = () => {
-    const response = axios.post(baseUrl, song);
-    return response.data;
-  };
+  // const onDeleteFromFav = (id) => {
+  //   console.log('sam delete it', id)
+  // };
 
   const handleAddFav = (id) => {
     const song = {
@@ -20,8 +21,7 @@ const SongItem = ({ song }) => {
     };
     console.log('samundra', id)
     console.log('data', song)
-    const response = axios.post(baseUrl, song);
-    return response.data;
+    dispatch(addToFavThunk(song))
   };
 
   return (
@@ -44,7 +44,7 @@ const SongItem = ({ song }) => {
           aria-label="delete book"
           onClick={() => handleAddFav(id)}
         >
-          <img src={Favorite} className='svgFav'/>
+          <img src={Favorite} className='svgFav' alt='favorite icon'/>
         </button>
       </div>
     </div>

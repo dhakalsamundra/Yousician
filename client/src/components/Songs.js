@@ -1,26 +1,29 @@
-import React, { Fragment, useState, useEffect } from 'react'
+import React, { Fragment, useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { CSSTransition, TransitionGroup } from 'react-transition-group'
+
+import { fetchSongsThunk } from '../redux/actions/songAction'
 import SongItem from './SongItem'
 import Spinner from './Spinner'
 
 const Songs = () => {
-  const [data, setData] = useState([])
+  const dispatch = useDispatch()
+  const songs = useSelector((state) => state.song.filteredList)
 
   useEffect(() => {
-    async function fetchData() {
-      return await fetch('http://localhost:3004/songs')
-        .then((res) => res.json())
-        .then((songs) => setData(songs))
-    }
-    fetchData()
-  }, [])
+    dispatch(fetchSongsThunk())
+  }, [dispatch])
+
+  if(songs === null){
+    return <Spinner />
+  }
 
   return (
     <div>
     <Fragment>
-      {data !== null ? (
+      {songs !== null ? (
         <TransitionGroup>
-          {data.map((song, id) => (
+          {songs.map((song, id) => (
               <CSSTransition
                 key={id}
                 timeout={500}
