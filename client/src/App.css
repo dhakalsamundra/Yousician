@@ -9,6 +9,11 @@
   padding: 0;
   font-family: 'Montserrat', sans-serif;
 }
+button{
+  background-color: Transparent;
+  border: none;       
+  cursor:pointer;  
+}
 p{
   color: white;
   filter: brightness(80%);
@@ -20,7 +25,7 @@ h1,h4{
 
 }
 body {
-  background-color:hsl(0, 3%, 6%);
+  background-color:#000000
 
 }
 .card img {
@@ -115,7 +120,7 @@ body {
   background-color:hsl(0, 0%, 8%);
 }
 .details:nth-child(even){
-  background-color:hsl(0, 0%, 5%);
+  background-color:#000000
 
 }
 .card {
@@ -148,18 +153,6 @@ body {
   filter: brightness(90%);
 }
 
-.song-1 h4 {
-  font-family:  'Montserrat', sans-serif;
-  font-weight: 300;
-  color: #ffffff;
-  filter: brightness(180%);
-}
-.song-1 h6 {
-  font-family:  'Montserrat', sans-serif;
-  font-weight: 100;
-  color: #ffffff;
-  filter: brightness(70%);
-}
 .song-icon{
   display: flex;
   flex-direction: row;
@@ -167,13 +160,12 @@ body {
   width: 150px;
   height: 50px;
 }
-.svgFav g{
-  fill: #0819b4;
-}
+
 .level{
   border-radius: 50%;
-  border: 4px solid white;
-  width: 20%;
+  width: 25px;
+  height: 25px;
+  border: 1px solid white;
   text-align: center;
   justify-content: center;
   color: #ffffff;
@@ -181,6 +173,7 @@ body {
 }
 .level p {
   color: #f6f6f8;
+  font-weight: 600;
   margin-top: 3px;
   filter: brightness(200%);
 }
@@ -230,6 +223,7 @@ textarea {
 }
 .filter-icon p{
   color: #ffffff;
+  font-weight: 600;
   width: 40px;
   height: 50px;
   margin-left: 10px;
