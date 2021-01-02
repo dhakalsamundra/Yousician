@@ -4,6 +4,7 @@ import Icon from "../assets/icons/filter.svg";
 
 const Filter = () => {
   return (
+    <div className='sort'>
     <div className='filter'>
 
           <span>FILTER BY LEVEL</span>
@@ -18,6 +19,7 @@ const Filter = () => {
             
             </div>
           </div>
+        </div>
         </div>
   );
 };

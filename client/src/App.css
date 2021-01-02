@@ -192,43 +192,25 @@ select,
 textarea {
   padding: 0.4rem;
 }
-
-
-
-/* Mobile Styles */
-@media (max-width: 400px) {
-  .search-Container{
-    width: 100%;
-    margin-left: 0;
-    background-image: url('./assets/yousician-hero-mobile.png');
-  }
-  .card{
-    width: 100%;
-    margin-left: 0;
-  }
-}
-
-
-
-
-
-
-
-
-
-
-
-.filter{
+.sort{
+  border: 2px solid blue;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
+  justify-content: flex-end;
+  height: 30px;
+}
+.filter{
+  position: absolute;
+  display: flex;
+  flex-direction: row;
   color: #ffffff;
   border-radius: 25px;
-  margin-left: 53rem;
   margin-bottom: 1rem;
+  margin-right: 10rem;
   font-size: 12px;
   height: 25px;
-  width: 205px;
+  width: 190px;
+  border: 2px solid red;
 }
 .filter span{
   margin-top: 5px;
@@ -271,4 +253,19 @@ textarea {
   height: 12px;
   margin-top: 7px;
   text-align: center;
+}
+
+
+
+/* Mobile Styles */
+@media (max-width: 400px) {
+  .search-Container{
+    width: 100%;
+    margin-left: 0;
+    background-image: url('./assets/yousician-hero-mobile.png');
+  }
+  .card{
+    width: 100%;
+    margin-left: 0;
+  }
 }
