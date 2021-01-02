@@ -20,7 +20,8 @@ const Search = () => {
         <p>Here are the most recent additions to the Yousician App. Start playing today!</p>
       </div>
 
-      <form className='search'>
+      <div className='search'>
+      <form >
         <input
           ref={text}
           type='text'
@@ -29,9 +30,9 @@ const Search = () => {
           onChange={onChange}
           aria-label='search'
         />
-        <img style= {{ width: '12px'}} src={icon} alt='search icon'/>
+        <img  src={icon} className='search-img' alt='search icon'/>
       </form>
-
+      </div>
     </div>
   )
 }

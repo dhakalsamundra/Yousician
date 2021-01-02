@@ -10,7 +10,7 @@
   font-family: 'Montserrat', sans-serif;
 }
 p{
-  color: var(--dark-color);
+  color: white;
   filter: brightness(80%);
   font-size: 15px;
   font-weight: 100;
@@ -45,7 +45,6 @@ body {
   height: 250px;
   margin-bottom: 1rem;
   background-image: url('./assets/yousician-hero.png');
-  border: 2px solid red;
 }
 .info{
   display: flex;
@@ -54,50 +53,42 @@ body {
   align-items: center;
   margin-top: -10px;
   height: 80px;
-  border: 2px solid blue;
 }
 .info h1{
   margin-top: 5px;
   font-weight: 700;
-  border: 2px solid green;
 }
 .info p {
   margin-top: 10px;
   color: #ffffff;
-  border: 2px solid yellow;
 }
 .search{
   position: relative;
-  width: 560px;
+  width: 100%;
   text-align: center;
-  margin-left: 27%;
   margin-top: -3%;
-  border: 2px solid black;
 
 }
 .search input{
   position: relative;
-  min-width: 100%;
+  width: 34rem;
   border-radius: 25px;
   border: 1px solid white;
   height: 20px;
-  margin-left: -5px;
+  margin-left: 1rem;
   padding: 0.4rem;
 
 }
 .search img{
-  position: absolute;
-  margin-top: -55px;
-  right: -1%;
-  padding: 13px 12px;
-  filter: brightness(40%);
-  border: 2px solid violet;
+  position: relative;
+  top: 2px;
+  width: 12px;
+  margin-left: -3rem;
 }
 ::-webkit-input-placeholder {
   font-size: 13px;
   text-indent: 20px;
   color: #939393;
-  border: 2px solid blue;
 }
 .container-1{
   display: flex;
@@ -202,6 +193,31 @@ textarea {
   padding: 0.4rem;
 }
 
+
+
+/* Mobile Styles */
+@media (max-width: 400px) {
+  .search-Container{
+    width: 100%;
+    margin-left: 0;
+    background-image: url('./assets/yousician-hero-mobile.png');
+  }
+  .card{
+    width: 100%;
+    margin-left: 0;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
 .filter{
   display: flex;
   flex-direction: row;
@@ -249,26 +265,10 @@ textarea {
   margin-left: 3.4rem;
 }
 .img-filter img{
-  position: absolute;
+  position: relative;
   border-radius: 50%;
-  width: 50px;
+  width: 25px;
   height: 12px;
+  margin-top: 7px;
   text-align: center;
-  margin-top: 5px;
-  top: 16.9rem;
-  right: 14.5rem;
-}
-
-
-/* Mobile Styles */
-@media (max-width: 400px) {
-  .search-Container{
-    width: 100%;
-    margin-left: 0;
-    background-image: url('./assets/yousician-hero-mobile.png');
-  }
-  .card{
-    width: 100%;
-    margin-left: 0;
-  }
 }
