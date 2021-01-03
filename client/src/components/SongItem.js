@@ -19,9 +19,10 @@ const SongItem = ({ song }) => {
     const song = {
       songId: id,
     };
-    console.log('samundra', id)
-    console.log('data', song)
-    dispatch(addToFavThunk(song))
+    // document.svgFav.style.fill = 'red'; 
+    // console.log('samundra', id)
+    // console.log('data', song)
+    // dispatch(addToFavThunk(song))
   };
 
   return (
@@ -40,11 +41,10 @@ const SongItem = ({ song }) => {
       <div className="song-icon">
         <div className='level'><p>{level}</p></div>
         <button
-          color="secondary"
           aria-label="delete book"
           onClick={() => handleAddFav(id)}
         >
-          <img src={FavoriteBorder} className='svgFav' alt='favorite icon'/>
+          <img src={FavoriteBorder} className='abc' alt='favorite icon'/>
         </button>
       </div>
 
