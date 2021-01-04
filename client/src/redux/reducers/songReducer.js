@@ -3,6 +3,7 @@ import {
   ADD_TO_FAV,
   SEARCH_SONG,
   DELETE_FROM_FAV,
+  FILTER_BY_LEVEL
 } from '../../types'
 
 export default function country(
@@ -50,6 +51,17 @@ export default function country(
     return {
       ...state,
       filteredList: [...searchedData],
+    }
+  }
+
+  case FILTER_BY_LEVEL: {
+    const { number } = action.payload
+    const searchedData = state.list.filter((element) =>
+      element.level === number
+      )
+    return {
+      ...state,
+      filteredList: [...searchedData]
     }
   }
 

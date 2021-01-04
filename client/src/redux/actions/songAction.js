@@ -3,6 +3,7 @@ import {
   FETCH_SONG,
   SEARCH_SONG,
   DELETE_FROM_FAV,
+  FILTER_BY_LEVEL
 } from '../../types'
 import SongServices from  '../../services/song'
 
@@ -38,6 +39,15 @@ export function searchSong(searchTerm) {
     type: SEARCH_SONG,
     payload: {
       searchTerm,
+    },
+  }
+}
+
+export function filterSongByLevel(number) {
+  return {
+    type: FILTER_BY_LEVEL,
+    payload: {
+      number,
     },
   }
 }

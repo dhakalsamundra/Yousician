@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 
 import {  addToFavThunk } from '../redux/actions/songAction'
 import FavoriteBorder from '../assets/icons/favorite_border.svg'
-import Favorite from '../assets/icons/favorite.svg'
+import { ReactComponent as Favorite} from '../assets/icons/favorite.svg'
 
 
 const SongItem = ({ song }) => {
@@ -19,8 +19,9 @@ const SongItem = ({ song }) => {
     const song = {
       songId: id,
     };
-    // document.svgFav.style.fill = 'red'; 
-    // console.log('samundra', id)
+    const svgObject = document.getElementById('favsvg')
+    svgObject.style.backgroundColor = "red";
+    console.log('samundra', id)
     // console.log('data', song)
     // dispatch(addToFavThunk(song))
   };
@@ -44,7 +45,7 @@ const SongItem = ({ song }) => {
           aria-label="delete book"
           onClick={() => handleAddFav(id)}
         >
-          <img src={FavoriteBorder} className='abc' alt='favorite icon'/>
+        <img src={FavoriteBorder} id='favsvg' alt='favorite icon'/>
         </button>
       </div>
 

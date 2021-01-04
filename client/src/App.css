@@ -113,14 +113,12 @@ body {
   width: 70%;
   height: 60px;
   margin-left: 18%;
-  background-color: #ffffff;
 }
 .details:nth-child(odd){
   background-color:hsl(0, 0%, 8%);
 }
 .details:nth-child(even){
   background-color:#000000
-
 }
 .card {
   display: flex;
@@ -182,14 +180,7 @@ select,
 textarea {
   padding: 0.4rem;
 }
-.sort{
-  border: 2px solid blue;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
-  height: 30px;
-  margin-bottom: 1rem;
-}
+
 .filter{
   position: absolute;
   display: flex;
@@ -201,7 +192,11 @@ textarea {
   font-size: 12px;
   height: 25px;
   width: 190px;
-  border: 2px solid red;
+}
+
+.btn{
+  width: 50px;
+  height: 50px;
 }
 .filter span{
   margin-top: 5px;
@@ -228,8 +223,8 @@ textarea {
   margin-top: 3px;
   filter: brightness(200%);
   font-weight: 500;
-
 }
+
 .img-filter{
   border-radius: 50%;
   background-color: #ffffff;
@@ -246,6 +241,80 @@ textarea {
   margin-top: 7px;
   text-align: center;
 }
+.favsvg{
+  cursor: pointer;
+ }
+ /* .favsvg g {
+ } */
+
+ #togglable-btn{
+  color: #ffffff;
+  font-size: 10px;
+}
+
+/* .togglableContent{
+  margin-left: -64rem;
+  width: 100vmax;
+  height: 80px;
+} */
+
+.sort{
+  height: 25px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+.filter-container{
+  border: 2px solid green;
+  display: flex;
+  flex-direction: column;
+}
+.level-container{
+  width: 99%;
+  height: 50px;
+  margin-bottom: 13px;
+}
+.each-level{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+
+}
+.samundra{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid #ffffff;
+}
+
+.samundra p{
+  color: #ffffff;
+  text-align: center;
+  margin-top: 5px;
+  margin-left: 8px;
+  font-weight: 500;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -320,7 +389,7 @@ textarea {
     width: 300px;
   }
   .filter{
-    margin-right: -5px;
+    margin-right: -90px;
   }
   .details{
     width: 330px;
@@ -408,12 +477,22 @@ textarea {
   .song-icon{
     width: 70px;
   }
+
   .level{
     width: 20px;
     height: 20px;
-    margin-top: 15px;
+    border-radius: 50%;
+    background-color: #383635;
   }
   .level p{
-    font-size: 10px;
+    margin-top: 2px;
+    font-size: 12px;
+  }
+
+  .btnlevel {
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid red;
   }
 }
