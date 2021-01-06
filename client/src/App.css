@@ -266,30 +266,25 @@ textarea {
   margin-bottom: 1rem;
   cursor: pointer;
 }
-.filter-container{
-  border: 2px solid green;
-  display: flex;
-  flex-direction: column;
-}
 .level-container{
   width: 99%;
   height: 50px;
   margin-bottom: 13px;
 }
-.each-level{
+.level1{
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
 
 }
-.samundra{
+.each-level{
   width: 30px;
   height: 30px;
   border-radius: 50%;
   border: 1px solid #ffffff;
 }
 
-.samundra p{
+.each-level p{
   color: #ffffff;
   text-align: center;
   margin-top: 5px;
@@ -386,7 +381,7 @@ textarea {
     margin-left: -15px;
   }
   .sort{
-    width: 300px;
+    width: 250px;
   }
   .filter{
     margin-right: -90px;
@@ -495,4 +490,17 @@ textarea {
     flex-direction: column;
     border: 2px solid red;
   }
+}
+
+
+#addFav {
+  color: red;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+#removeFav {
+  color: white;
+  margin-top: 20px;
+  cursor: pointer;
 }

@@ -1,29 +1,37 @@
-import React from "react";
-import { useDispatch } from 'react-redux'
+import React, { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import FontAwesome from 'react-fontawesome'
 
-import {  addToFavThunk } from '../redux/actions/songAction'
-import FavoriteBorder from '../assets/icons/favorite_border.svg'
-import { ReactComponent as Favorite} from '../assets/icons/favorite.svg'
+import {  addToFavThunk, deleteFromFavThunk } from '../redux/actions/songAction'
 
 
 const SongItem = ({ song }) => {
-
+  const favList = useSelector((state) => state.song.fav)
   const dispatch = useDispatch()
   const { id, title, artist, images, level } = song;
 
-  // const onDeleteFromFav = (id) => {
-  //   console.log('sam delete it', id)
-  // };
+  const [toggleMenu, setToggleMenu] = useState(false);
+  const menuToggle = () => {
+    setToggleMenu((prevTog) => !prevTog);
+  };
 
   const handleAddFav = (id) => {
     const song = {
       songId: id,
     };
-    const svgObject = document.getElementById('favsvg')
-    svgObject.style.backgroundColor = "red";
-    console.log('samundra', id)
-    // console.log('data', song)
-    // dispatch(addToFavThunk(song))
+    dispatch(addToFavThunk(song))
+  };
+
+
+  const handleDeleteFav = (id) => {
+    // use filter to compare the id
+      const data = favList.filter((element) => element.songId === id)
+    // map the filter data
+      let favId = data.map((element) => element.id)
+
+      favId = favId.toString()
+      console.log('final id', favId)
+      dispatch(deleteFromFavThunk(favId))
   };
 
   return (
@@ -41,12 +49,12 @@ const SongItem = ({ song }) => {
 
       <div className="song-icon">
         <div className='level'><p>{level}</p></div>
-        <button
-          aria-label="delete book"
-          onClick={() => handleAddFav(id)}
-        >
-        <img src={FavoriteBorder} id='favsvg' alt='favorite icon'/>
-        </button>
+        <div onClick={menuToggle} className="favbtn">
+        { toggleMenu ? (
+        <FontAwesome onClick={() =>handleDeleteFav(id)} className='far fa-heart' id='addFav'/>
+        ) : (
+        <FontAwesome onClick={() =>handleAddFav(id)} className='far fa-heart' id='removeFav'/>
+        )}</div>
       </div>
 
     </div>

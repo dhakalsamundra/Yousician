@@ -25,11 +25,12 @@ export function getAllSong(fetchedSong){
   }
 }
 
-export function removeFromFav(id) {
+export function removeFromFav(favId) {
+  console.log('this is the action reducer path', favId)
   return {
     type: DELETE_FROM_FAV,
     payload: {
-      id,
+      favId,
     },
   }
 }
@@ -44,6 +45,7 @@ export function searchSong(searchTerm) {
 }
 
 export function filterSongByLevel(number) {
+  console.log('action song', number)
   return {
     type: FILTER_BY_LEVEL,
     payload: {
@@ -56,8 +58,8 @@ export function filterSongByLevel(number) {
 export function fetchSongsThunk() {
   return async (dispatch) => {
     const resp = await fetch('http://localhost:3004/songs')
-    const countriesData = await resp.json()
-    dispatch(getAllSong(countriesData))
+    const songsData = await resp.json()
+    dispatch(getAllSong(songsData))
   }
 }
 
@@ -67,8 +69,9 @@ export function addToFavThunk(song) {
   }
 }
 
-export function deleteFromFavThunk(id) {
+export function deleteFromFavThunk(favId) {
   return async (dispatch) => {
-    return SongServices.deleteSong(id,dispatch)
+    console.log('this is the action service path', favId)
+    return SongServices.deleteSong(favId,dispatch)
   }
 }

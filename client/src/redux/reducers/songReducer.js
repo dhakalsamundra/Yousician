@@ -31,13 +31,14 @@ export default function country(
       fav: [...state.fav, songId],
     }
   }
-
   case DELETE_FROM_FAV: {
-    const { id } = action.payload
-    const index = state.fav.findIndex((p) => p.id === id)
-    if (index >= 0) {
-      //removing the one country in that index
+    const { favId } = action.payload
+    console.log('this is the redux reducer', parseInt(favId))
+    const index = state.fav.findIndex((p) => p.id === favId)
+    if (index) {
+      //removing the one song in that index
       state.fav.splice(index, 1)
+      console.log('this is the redux reducer', ...state.fav)
       return { ...state, fav: [...state.fav] }
     }
     return state
@@ -56,12 +57,12 @@ export default function country(
 
   case FILTER_BY_LEVEL: {
     const { number } = action.payload
-    const searchedData = state.list.filter((element) =>
-      element.level === number
-      )
+    const levelData = state.list.filter(function(item) {
+      return number.indexOf(item.level) !== -1
+  });
     return {
       ...state,
-      filteredList: [...searchedData]
+      filteredList: [...levelData]
     }
   }
 

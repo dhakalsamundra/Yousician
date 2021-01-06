@@ -15,10 +15,10 @@ const getAll = async(dispatch) => {
   }
 }
 
-const create = async (songId, dispatch) => {
+const create = async (song, dispatch) => {
   try {
     const response = await axios ({
-      method: 'POST', url: baseUrl + '/favorites', data: songId
+      method: 'POST', url: baseUrl + '/favorites', data: song
     })
     dispatch(addToFav(response.data))
   } catch (error) {
@@ -26,12 +26,13 @@ const create = async (songId, dispatch) => {
   }
 }
 
-const deleteSong = async (songId, dispatch) => {
+const deleteSong = async (favId, dispatch) => {
+  console.log('axios service', favId)
   try {
-    await axios({
-      method: 'DELETE', url: `${baseUrl}/favorites/${songId}`, data: songId
+    const response = await axios ({
+      method: 'DELETE', url: baseUrl + `/favorites/${favId}`
     })
-    dispatch(removeFromFav(songId))
+    dispatch(removeFromFav(favId))
   } catch (error) {
     console.log(error)
   }
