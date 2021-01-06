@@ -29,8 +29,8 @@ const create = async (song, dispatch) => {
 const deleteSong = async (favId, dispatch) => {
   console.log('axios service', favId)
   try {
-    const response = await axios ({
-      method: 'DELETE', url: baseUrl + `/favorites/${favId}`
+    await axios ({
+      method: 'DELETE', url: baseUrl + `/favorites/${favId}`, favId
     })
     dispatch(removeFromFav(favId))
   } catch (error) {

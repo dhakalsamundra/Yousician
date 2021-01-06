@@ -26,7 +26,7 @@ export function getAllSong(fetchedSong){
 }
 
 export function removeFromFav(favId) {
-  console.log('this is the action reducer path', favId)
+  console.log('this is the action reducer path from axios', favId)
   return {
     type: DELETE_FROM_FAV,
     payload: {

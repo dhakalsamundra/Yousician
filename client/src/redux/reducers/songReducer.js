@@ -33,12 +33,12 @@ export default function country(
   }
   case DELETE_FROM_FAV: {
     const { favId } = action.payload
-    console.log('this is the redux reducer', parseInt(favId))
+    console.log('reducer id', favId)
     const index = state.fav.findIndex((p) => p.id === favId)
-    if (index) {
-      //removing the one song in that index
+    if (index >= 0) {
+      //removing the one country in that index
       state.fav.splice(index, 1)
-      console.log('this is the redux reducer', ...state.fav)
+      console.log('cart data', ...state.fav)
       return { ...state, fav: [...state.fav] }
     }
     return state

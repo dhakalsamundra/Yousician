@@ -3697,5 +3697,10 @@
       "search": "jason mraz i'm yours"
     }
   ],
-  "favorites": []
+  "favorites": [
+    {
+      "songId": "5b8f736fb3984c13548374af",
+      "id": "1enIS61"
+    }
+  ]
 }

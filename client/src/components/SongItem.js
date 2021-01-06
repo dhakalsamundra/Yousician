@@ -25,12 +25,15 @@ const SongItem = ({ song }) => {
 
   const handleDeleteFav = (id) => {
     // use filter to compare the id
+    console.log('id from icon', id)
       const data = favList.filter((element) => element.songId === id)
+      console.log('id data in fav cart', data)
+
     // map the filter data
       let favId = data.map((element) => element.id)
-
       favId = favId.toString()
       console.log('final id', favId)
+      
       dispatch(deleteFromFavThunk(favId))
   };
 
@@ -50,10 +53,10 @@ const SongItem = ({ song }) => {
       <div className="song-icon">
         <div className='level'><p>{level}</p></div>
         <div onClick={menuToggle} className="favbtn">
-        { toggleMenu ? (
-        <FontAwesome onClick={() =>handleDeleteFav(id)} className='far fa-heart' id='addFav'/>
+        { !toggleMenu ? (
+          <FontAwesome onClick={() =>handleAddFav(id)} className='far fa-heart' id='removeFav'/>
         ) : (
-        <FontAwesome onClick={() =>handleAddFav(id)} className='far fa-heart' id='removeFav'/>
+          <FontAwesome onClick={() =>handleDeleteFav(id)} className='far fa-heart' id='addFav'/>
         )}</div>
       </div>
 
