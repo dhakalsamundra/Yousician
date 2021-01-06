@@ -244,19 +244,13 @@ textarea {
 .favsvg{
   cursor: pointer;
  }
- /* .favsvg g {
- } */
+ 
 
  #togglable-btn{
   color: #ffffff;
   font-size: 10px;
 }
 
-/* .togglableContent{
-  margin-left: -64rem;
-  width: 100vmax;
-  height: 80px;
-} */
 
 .sort{
   height: 25px;

@@ -1,44 +1,23 @@
-import React, { Fragment, useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { CSSTransition, TransitionGroup } from 'react-transition-group'
+import React, { Fragment } from "react";
+import { useSelector } from "react-redux";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 
-import { fetchSongsThunk } from '../redux/actions/songAction'
-import SongItem from './SongItem'
-import Spinner from './Spinner'
+import SongItem from "./SongItem";
 
 const Songs = () => {
-  const dispatch = useDispatch()
-  const songs = useSelector((state) => state.song.filteredList)
-
-  useEffect(() => {
-    dispatch(fetchSongsThunk())
-  }, [dispatch])
-
-  // if(songs === null){
-  //   return <Spinner />
-  // }
+  const songs = useSelector((state) => state.song.filteredList);
 
   return (
-    <div>
     <Fragment>
-      {songs !== null ? (
-        <TransitionGroup>
-          {songs.map((song, id) => (
-              <CSSTransition
-                key={id}
-                timeout={500}
-                classNames='item'
-              >
-                <SongItem song={song} />
-              </CSSTransition>
-            ))}
-        </TransitionGroup>
-      ) : (
-        <Spinner />
-      )}
+      <TransitionGroup>
+        {songs.map((song, id) => (
+          <CSSTransition key={id} timeout={500} classNames="item">
+            <SongItem song={song} />
+          </CSSTransition>
+        ))}
+      </TransitionGroup>
     </Fragment>
-    </div>
-  )
-}
+  );
+};
 
-export default Songs
+export default Songs;

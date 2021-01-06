@@ -25,16 +25,13 @@ const SongItem = ({ song }) => {
 
   const handleDeleteFav = (id) => {
     // use filter to compare the id
-    console.log('id from icon', id)
-      const data = favList.filter((element) => element.songId === id)
-      console.log('id data in fav cart', data)
+    const data = favList.filter((element) => element.songId === id)
 
     // map the filter data
-      let favId = data.map((element) => element.id)
-      favId = favId.toString()
-      console.log('final id', favId)
-      
-      dispatch(deleteFromFavThunk(favId))
+    let favId = data.map((element) => element.id)
+    favId = favId.toString()
+
+    dispatch(deleteFromFavThunk(favId))
   };
 
   return (

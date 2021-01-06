@@ -8,7 +8,7 @@ const initState = {
   song: {
     list: [],
     filteredList: [],
-    fav: []
+    fav: [],
   },
 }
 

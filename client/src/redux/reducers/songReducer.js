@@ -10,7 +10,7 @@ export default function country(
   state = {
     list: [],
     filteredList: [],
-    fav: []
+    fav: [],
   },
   action
 ) {
@@ -33,10 +33,9 @@ export default function country(
   }
   case DELETE_FROM_FAV: {
     const { favId } = action.payload
-    console.log('reducer id', favId)
     const index = state.fav.findIndex((p) => p.id === favId)
     if (index >= 0) {
-      //removing the one country in that index
+      //removing the one song in that index
       state.fav.splice(index, 1)
       console.log('cart data', ...state.fav)
       return { ...state, fav: [...state.fav] }
@@ -51,12 +50,13 @@ export default function country(
     )
     return {
       ...state,
-      filteredList: [...searchedData],
+      filteredList: [...searchedData]
     }
   }
 
   case FILTER_BY_LEVEL: {
     const { number } = action.payload
+    console.log('reducer number', number)
     const levelData = state.list.filter(function(item) {
       return number.indexOf(item.level) !== -1
   });
