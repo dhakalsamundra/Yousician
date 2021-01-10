@@ -27,6 +27,7 @@ const Search = () => {
             ref={text}
             type='text'
             className='search-placeholder'
+            id='search'
             placeholder='Search for song by artist or title'
             onChange={onChange}
             aria-label='search'

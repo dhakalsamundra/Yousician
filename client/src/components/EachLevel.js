@@ -15,6 +15,8 @@ const EachLevel = ({ isVisible, level }) => {
       return a
     })
   }
+  // eslint-disable-next-line no-console
+  console.log('check the number', number)
 
   const numToDeg = (level) => {
     if( level <= 7) {
