@@ -44,7 +44,6 @@ export function searchSong(searchTerm) {
 }
 
 export function filterSongByLevel(number) {
-  console.log('action song', number)
   return {
     type: FILTER_BY_LEVEL,
     payload: {
@@ -53,7 +52,7 @@ export function filterSongByLevel(number) {
   }
 }
 
-// An Example of Async action processed by redux-thunk middleware
+// Async action processed by redux-thunk middleware
 export function fetchSongsThunk() {
   return async (dispatch) => {
     const resp = await fetch('http://localhost:3004/songs')
@@ -62,12 +61,14 @@ export function fetchSongsThunk() {
   }
 }
 
+// Async action for adding the song to the fav list
 export function addToFavThunk(song) {
   return async (dispatch) => {
     return SongServices.create(song, dispatch)
   }
 }
 
+//Async action for deleting the song from fav list
 export function deleteFromFavThunk(favId) {
   return async (dispatch) => {
     return SongServices.deleteSong(favId,dispatch)

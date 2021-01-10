@@ -3,7 +3,7 @@ import {
   ADD_TO_FAV,
   SEARCH_SONG,
   DELETE_FROM_FAV,
-  FILTER_BY_LEVEL
+  FILTER_BY_LEVEL,
 } from '../../types'
 
 export default function country(
@@ -15,11 +15,12 @@ export default function country(
   action
 ) {
   switch (action.type) {
+
   case FETCH_SONG: {
     const { fetchedSong } = action.payload
     return {
       ...state,
-      //making a new array of country after adding and using spread.
+      //making a new array of song after adding and using spread.
       list: [...fetchedSong],
       filteredList: [...fetchedSong],
     }
@@ -28,6 +29,7 @@ export default function country(
     const { songId } = action.payload
     return {
       ...state,
+      // make a new array of songs fav list  after adding and using spread
       fav: [...state.fav, songId],
     }
   }
@@ -35,34 +37,41 @@ export default function country(
     const { favId } = action.payload
     const index = state.fav.findIndex((p) => p.id === favId)
     if (index >= 0) {
-      //removing the one song in that index
+      //removing particular song in that index from fav list
       state.fav.splice(index, 1)
-      console.log('cart data', ...state.fav)
-      return { ...state, fav: [...state.fav] }
+      return {
+        ...state,
+        // Show the fav list after the removal of the particular song
+        fav: [...state.fav] }
     }
     return state
   }
 
   case SEARCH_SONG: {
     const { searchTerm } = action.payload
-    const searchedData = state.list.filter((element) =>
-      element.title.toLowerCase().includes(searchTerm.toLowerCase()) || element.artist.toLowerCase().includes(searchTerm.toLowerCase())
+    // filtering the song of store with the user input value
+    const searchedData = state.list.filter(
+      (element) =>
+        element.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+          element.artist.toLowerCase().includes(searchTerm.toLowerCase())
     )
     return {
       ...state,
-      filteredList: [...searchedData]
+      // display the song in the store, a user have input
+      filteredList: [...searchedData],
     }
   }
 
   case FILTER_BY_LEVEL: {
     const { number } = action.payload
-    console.log('reducer number', number)
-    const levelData = state.list.filter(function(item) {
+    // Filtering the songs by  array of level property
+    const levelData = state.list.filter(function (item) {
       return number.indexOf(item.level) !== -1
-  });
+    })
     return {
       ...state,
-      filteredList: [...levelData]
+      // display the song that matched to the array level
+      filteredList: [...levelData],
     }
   }
 

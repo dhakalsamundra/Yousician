@@ -8,6 +8,7 @@ const baseUrl = 'http://localhost:3004'
 
 const getAll = async(dispatch) => {
   try {
+    // get the song data from the api end-point
     const response = await axios.get(baseUrl + '/song')
     dispatch(getAllSong(response.data))
   } catch (error) {
@@ -17,6 +18,7 @@ const getAll = async(dispatch) => {
 
 const create = async (song, dispatch) => {
   try {
+    // storing the song to the fav api end-point
     const response = await axios ({
       method: 'POST', url: baseUrl + '/favorites', data: song
     })
@@ -27,7 +29,7 @@ const create = async (song, dispatch) => {
 }
 
 const deleteSong = async (favId, dispatch) => {
-  console.log('axios service', favId)
+  //delete the song from the fav api end-point
   try {
     await axios ({
       method: 'DELETE', url: baseUrl + `/favorites/${favId}`, favId

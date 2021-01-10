@@ -9,6 +9,7 @@ const Search = () => {
   const dispatch = useDispatch()
 
   const onChange = e => {
+    // dispatch the value
     dispatch(searchSong(e.target.value))
   }
 
@@ -21,17 +22,17 @@ const Search = () => {
       </div>
 
       <div className='search'>
-      <form >
-        <input
-          ref={text}
-          type='text'
-          className='search-placeholder'
-          placeholder='Search for song by artist or title'
-          onChange={onChange}
-          aria-label='search'
-        />
-        <img  src={icon} className='search-img' alt='search icon'/>
-      </form>
+        <form >
+          <input
+            ref={text}
+            type='text'
+            className='search-placeholder'
+            placeholder='Search for song by artist or title'
+            onChange={onChange}
+            aria-label='search'
+          />
+          <img  src={icon} className='search-img' alt='search icon'/>
+        </form>
       </div>
     </div>
   )

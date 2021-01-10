@@ -1,40 +1,66 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
- 
-import { filterSongByLevel } from "../redux/actions/songAction";
- 
-const EachLevel = () => {
-  const [ number, setNumber] = useState([])
-  const dispatch = useDispatch();
+/* eslint-disable no-unused-vars */
+import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
 
-  const LEVEL = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+import { filterSongByLevel } from '../redux/actions/songAction'
 
-  console.log('this is component each', number)
+const EachLevel = ({ isVisible, level }) => {
+  const [number, setNumber] = useState([])
+  const dispatch = useDispatch()
 
- 
-  const filterChange = (each) => {
-    let a = number.push(each)
-    setNumber(a)
-    // setNumber(prev => [ ...prev, each])
-    const newArray = [ ...number, each];
+  const filterChange = (level) => {
+    const a = [...number, level]
+    setNumber(() => {
+      dispatch(filterSongByLevel(a))
+      return a
+    })
+  }
 
-    dispatch(filterSongByLevel(number));
- 
-  };
- 
+  const numToDeg = (level) => {
+    if( level <= 7) {
+      return (24 * level) - 90 + 'deg'
+    } else {
+      return (24 * level) - 270 + 'deg'
+    }
+  }
+
+  const checkS = (level) => {
+    return level <= 7 ? 1 : 0
+  }
+
+
+  const dynamicColor = (level) => {
+    let color = ''
+    if (level >= 1 && level <= 5) {
+      return (color = '#6fc13e')
+    }
+    if (level >= 6 && level <= 10) {
+      return (color = '#ff8e00')
+    } else {
+      return (color = '#dc001c')
+    }
+  }
+
+  const Style = {
+    '--v' : `${numToDeg(level)}`,
+    '--s': `${checkS(level)}`,
+    '--c': `${dynamicColor(level)}`
+  }
   return (
-    <div className="level-container">
-      <div className='level1'>
-      { LEVEL.map((each, level) => (
-        <div className='each-level' key={level}>
-        <button onClick={() => filterChange(each)}>
-          <p onClick={() => setNumber([...number, each])}>{each}</p>
-        </button>
-        </div>
-      ))}
+    <div
+      style={{ visibility: isVisible ? 'visible' : 'hidden' }}
+      className="level-container"
+    >
+      <div
+        className="each-level"
+        style={Style}
+        id="each-level"
+        onClick={() => filterChange(level)}
+      >
+        <p>{level}</p>
       </div>
     </div>
-  );
-};
- 
-export default EachLevel;
+  )
+}
+
+export default EachLevel

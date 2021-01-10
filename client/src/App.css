@@ -149,29 +149,6 @@ body {
   color: #d1cccc;
   filter: brightness(90%);
 }
-.song-icon{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  width: 150px;
-  height: 50px;
-}
-.level{
-  border-radius: 50%;
-  width: 25px;
-  height: 25px;
-  border: 1px solid white;
-  text-align: center;
-  justify-content: center;
-  color: #ffffff;
-  margin-top: 15px;
-}
-.level p {
-  color: #f6f6f8;
-  font-weight: 600;
-  margin-top: 3px;
-  filter: brightness(200%);
-}
 input {
   margin: 1.2rem;
 }
@@ -181,22 +158,34 @@ textarea {
   padding: 0.4rem;
 }
 
+
+.sort-container{
+  width: 99%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-bottom: 2rem;
+}
+.sort{
+  position: relative;
+  float: right;
+  height: 25px;
+  margin-bottom: 1.5rem;
+  width: 190px;
+  cursor: pointer;
+  margin-right: 10rem;
+}
+
 .filter{
   position: absolute;
   display: flex;
   flex-direction: row;
   color: #ffffff;
   border-radius: 25px;
-  margin-bottom: 1rem;
-  margin-right: 10rem;
+  margin-right: 2px;
   font-size: 12px;
   height: 25px;
   width: 190px;
-}
-
-.btn{
-  width: 50px;
-  height: 50px;
 }
 .filter span{
   margin-top: 5px;
@@ -241,51 +230,84 @@ textarea {
   margin-top: 7px;
   text-align: center;
 }
-.favsvg{
-  cursor: pointer;
- }
- 
-
- #togglable-btn{
-  color: #ffffff;
-  font-size: 10px;
-}
-
-
-.sort{
-  height: 25px;
+.levelOne{
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
-  margin-bottom: 1rem;
-  cursor: pointer;
-}
-.level-container{
+  justify-content: center;
   width: 99%;
-  height: 50px;
-  margin-bottom: 13px;
+  height: 2rem;
+  cursor: pointer;
+  margin-top: -1rem;
+  margin-right: 1rem;
 }
-.level1{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
 
+.level-container{
+  width: 40px;
+  height: 40px;
 }
 .each-level{
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  border: 1px solid #ffffff;
-}
+    width:22px;
+    height:22px;
+    display:inline-block;
+    border-radius:50%;
+    border:2px solid transparent;
+    background:
+      linear-gradient(black,black) padding-box,
+      linear-gradient(var(--v), #807e7e 50%,transparent 0) center/calc(var(--s)*100%) border-box,
+      linear-gradient(var(--v), var(--c) 50%,transparent 0) center/calc(100% - var(--s)*100%) border-box,
+      linear-gradient(to right, #807e7e 50%,var(--c) 0) border-box;
+  }
 
 .each-level p{
   color: #ffffff;
   text-align: center;
-  margin-top: 5px;
-  margin-left: 8px;
+  margin-top: 3px;
+  margin-left: 1px;
   font-weight: 500;
 }
 
+.song-icon{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 150px;
+  height: 50px;
+}
+
+.levelCircle{
+  width:22px;
+  height:22px;
+  display:inline-block;
+  border-radius:50%;
+  margin-top: 1rem;
+  border:2px solid transparent;
+  background:
+    linear-gradient(black,black) padding-box,
+    linear-gradient(var(--v), #807e7e 50%,transparent 0) center/calc(var(--s)*100%) border-box,
+    linear-gradient(var(--v), var(--c) 50%,transparent 0) center/calc(100% - var(--s)*100%) border-box,
+    linear-gradient(to right, #807e7e 50%,var(--c) 0) border-box;
+}
+
+#level-number {
+  color: #ffffff;
+  text-align: center;
+  margin-top: 2px;
+  margin-left: 1px;
+  font-weight: 500;
+}
+
+ #redClass {
+  color: red;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+#whiteClass {
+  color: white;
+  margin-top: 20px;
+  cursor: pointer;
+}
+ 
 
 
 
@@ -306,6 +328,11 @@ textarea {
 
 
 
+
+
+
+
+/* Responsiveness */
 
 @media(min-width: 500px) and (max-width: 740px){
  h1{
@@ -332,7 +359,6 @@ textarea {
     height: 15px;
   }
   .sort{
-    border: 2px solid rgb(21, 192, 149);
     margin-bottom: 1rem;
   }
   .filter{
@@ -344,78 +370,11 @@ textarea {
   .card{
     width: 400px;
   }
-  .level{
-    width: 15px;
-    height: 15px;
-  }
-  .level p{
+  #level-number{
     text-align: center;
-    margin-top: 1px;
-  }
-}
-
-/* Mobile Styles */
-@media(max-width: 350px){
-  h1{
-    font-size: 22px;
-    margin-left: 5px;
-  }
-  .info p{
     font-size: 12px;
-    margin-left: 15px;
-    width: 200px;
-  }
-  .search-Container{
-    width: 100%;
-    margin-left: 0;
-    background-image: url('./assets/yousician-hero-mobile.png');
-  }
-  .search input{
-    width: 250px;
-    margin-left: -15px;
-  }
-  .sort{
-    width: 250px;
-  }
-  .filter{
-    margin-right: -90px;
-  }
-  .details{
-    width: 330px;
-    display: flex;
-    flex-direction: row;
-    margin-left: 10px;
-  }
-  .card img {
-    width: 50px;
-    height: 50px;
-  }
-  .song-1{
-    width: 300px;
-    margin-left: -5px;
-    margin-right: -50px;
-  }
-  .song-1 p{
-    font-size: 11px;
-  }
-  .song-icon{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    width: 75px;
-    margin-right: 40px;
-  }
-  .level{
-    width: 20px;
-    height: 20px;
-    margin-left: 5px;
-    margin-top: 13px;
-  }
-  .level p {
-    font-size: 10px;
-  }
-  .song-icon img {
-    margin-left: 10px;
+    margin-left: -3px;
+    margin-top: 3px;
   }
 }
 
@@ -444,6 +403,20 @@ textarea {
   .filter{
     position: absolute;
     margin-right: 10px;
+    margin-left: 19px;
+  }
+  .level-container{
+    margin-bottom: 30px;
+  }
+  .each-level{
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+  }
+  .each-level p{
+    color: #ffffff;
+    font-size: 9px;
+    margin-bottom: -3px;
   }
   .details{
     width: 300px;
@@ -466,35 +439,80 @@ textarea {
   .song-icon{
     width: 70px;
   }
-
-  .level{
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: #383635;
-  }
-  .level p{
-    margin-top: 2px;
+  #level-number{
+    margin-top: 3px;
     font-size: 12px;
   }
+}
 
-  .btnlevel {
-    font-size: 20px;
+/* Mobile Styles */
+@media(max-width: 350px){
+  h1{
+    font-size: 22px;
+    margin-left: 5px;
+  }
+  .info p{
+    font-size: 12px;
+    margin-left: 15px;
+    width: 200px;
+  }
+  .search-Container{
+    width: 100%;
+    margin-left: 0;
+    background-image: url('./assets/yousician-hero-mobile.png');
+  }
+  .search input{
+    width: 250px;
+    margin-left: -15px;
+  }
+  .sort{
+    width: 250px;
+  }
+  .filter{
+    margin-left: 10rem;
+  }
+  .details{
+    width: 330px;
     display: flex;
-    flex-direction: column;
-    border: 2px solid red;
+    flex-direction: row;
+    margin-left: 10px;
+  }
+  .card img {
+    width: 50px;
+    height: 50px;
+  }
+  .song-1{
+    width: 300px;
+    margin-left: -5px;
+    margin-right: -50px;
+  }
+  .song-1 p{
+    font-size: 11px;
+  }
+  .song-icon{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 75px;
+    margin-right: 40px;
+  }
+  #level-number {
+    font-size: 12px;
+    margin-top: 3px;
+    margin-left: -1px;
+  }
+  .levelOne{
+    flex-wrap: wrap;
+    height: 120px;
+  }
+
+  .level1-container{
+    margin-top: 5px;
+    margin-left: 1rem;
+    justify-content: space-around;
+    width: 460px;
+    height: 35px;
+    flex-wrap: wrap;
   }
 }
 
-
-#addFav {
-  color: red;
-  margin-top: 20px;
-  cursor: pointer;
-}
-
-#removeFav {
-  color: white;
-  margin-top: 20px;
-  cursor: pointer;
-}
