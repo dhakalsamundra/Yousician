@@ -24,14 +24,7 @@ jobs:
 
       - name: lint
         run: cd client && npm run eslint
-
-      - name: e2e tests
-        uses: cypress-io/github-action@v2
-        with:
-          command: npm run test:e2e
-          start: cd api && npm run dev && cd .. && cd client
-          wait-on: http://localhost:3000
-          
+           
       - uses: actions/checkout@v2
         with:
           fetch-depth: '0'
