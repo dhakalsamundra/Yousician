@@ -1,20 +1,9 @@
 /* eslint-disable no-unused-vars */
-import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
+import React from 'react'
 
-import { filterSongByLevel } from '../redux/actions/songAction'
 
-const EachLevel = ({ isVisible, level }) => {
-  const [number, setNumber] = useState([])
-  const dispatch = useDispatch()
+const EachLevel = ({  level, filterChange }) => {
 
-  const filterChange = (level) => {
-    const a = [...number, level]
-    setNumber(() => {
-      dispatch(filterSongByLevel(a))
-      return a
-    })
-  }
 
   const numToDeg = (level) => {
     if( level <= 7) {
@@ -47,10 +36,6 @@ const EachLevel = ({ isVisible, level }) => {
     '--c': `${dynamicColor(level)}`
   }
   return (
-    <div
-      style={{ visibility: isVisible ? 'visible' : 'hidden' }}
-      className="level-container"
-    >
       <div
         className="each-level"
         style={Style}
@@ -59,7 +44,6 @@ const EachLevel = ({ isVisible, level }) => {
       >
         <p>{level}</p>
       </div>
-    </div>
   )
 }
 

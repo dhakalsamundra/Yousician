@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 
 import Songs from '../components/Songs'
 import Search from '../components/Search'
-import Filter from '../components/Filter'
+import FilterMenu from '../components/FilterMenu'
 import Spinner from '../components/Spinner'
 
 import { fetchSongsThunk } from '../redux/actions/songAction'
@@ -27,7 +27,7 @@ const Home = () => {
     <div className="grid-2">
       <div>
         <Search />
-        <Filter />
+        <FilterMenu />
         <Songs />
       </div>
     </div>

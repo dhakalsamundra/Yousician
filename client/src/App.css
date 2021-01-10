@@ -239,6 +239,7 @@ textarea {
   cursor: pointer;
   margin-top: -1rem;
   margin-right: 1rem;
+  border: 1px solid red;
 }
 
 .level-container{
