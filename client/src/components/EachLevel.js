@@ -1,22 +1,18 @@
 /* eslint-disable no-unused-vars */
 import React from 'react'
 
-
-const EachLevel = ({  level, filterChange }) => {
-
-
+const EachLevel = ({ level, filterChange }) => {
   const numToDeg = (level) => {
-    if( level <= 7) {
-      return (24 * level) - 90 + 'deg'
+    if (level <= 7) {
+      return 24 * level - 90 + 'deg'
     } else {
-      return (24 * level) - 270 + 'deg'
+      return 24 * level - 270 + 'deg'
     }
   }
 
   const checkS = (level) => {
     return level <= 7 ? 1 : 0
   }
-
 
   const dynamicColor = (level) => {
     let color = ''
@@ -31,19 +27,19 @@ const EachLevel = ({  level, filterChange }) => {
   }
 
   const Style = {
-    '--v' : `${numToDeg(level)}`,
+    '--v': `${numToDeg(level)}`,
     '--s': `${checkS(level)}`,
-    '--c': `${dynamicColor(level)}`
+    '--c': `${dynamicColor(level)}`,
   }
   return (
-      <div
-        className="each-level"
-        style={Style}
-        id="each-level"
-        onClick={() => filterChange(level)}
-      >
-        <p>{level}</p>
-      </div>
+    <div
+      className='each-level'
+      style={Style}
+      id='each-level'
+      onClick={() => filterChange(level)}
+    >
+      <p>{level}</p>
+    </div>
   )
 }
 

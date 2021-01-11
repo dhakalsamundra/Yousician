@@ -20,7 +20,7 @@ describe('Yousician app', function () {
     cy.get('.song-icon').contains(7)
     cy.get('.song-icon').contains(7)
     cy.get('.song-icon').contains(8)
-    
+
   })
 
   describe('Yousician App', function(){
