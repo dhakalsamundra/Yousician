@@ -11,6 +11,17 @@ describe('Yousician app', function () {
     cy.get('input').type('try this at home')
     cy.contains(8)
   })
+  it('Song can be filtered by array of level on click', () => {
+    cy.get('.sort').click()
+    cy.contains(7).click()
+    cy.get('.song-icon').contains(7)
+
+    cy.contains(8).click()
+    cy.get('.song-icon').contains(7)
+    cy.get('.song-icon').contains(7)
+    cy.get('.song-icon').contains(8)
+    
+  })
 
   describe('Yousician App', function(){
     beforeEach(function () {

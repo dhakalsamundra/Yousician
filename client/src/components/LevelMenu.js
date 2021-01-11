@@ -22,7 +22,8 @@ const LevelMenu = ({ isVisible }) => {
     return (
         <div style={{ visibility: isVisible ? 'visible' : 'hidden' }}  className="level-container">
             { LEVEL.map((level, id) => (
-                <EachLevel  level ={level} filterChange={filterChange}/>
+                // Passing the props and function to the child component
+                <EachLevel key={id}  level ={level} filterChange={filterChange}/>
             ))}
         </div>
     )

@@ -239,17 +239,20 @@ textarea {
   cursor: pointer;
   margin-top: -1rem;
   margin-right: 1rem;
-  border: 1px solid red;
 }
 
 .level-container{
-  width: 40px;
-  height: 40px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 .each-level{
     width:22px;
     height:22px;
     display:inline-block;
+    cursor: pointer;
+    margin-left: 1rem;
     border-radius:50%;
     border:2px solid transparent;
     background:
@@ -377,6 +380,10 @@ textarea {
     margin-left: -3px;
     margin-top: 3px;
   }
+  .each-level{
+    width: 20px;
+    height: 20px;
+  }
 }
 
 @media(min-width: 351px) and (max-width:499px){
@@ -444,6 +451,13 @@ textarea {
     margin-top: 3px;
     font-size: 12px;
   }
+  .level-container{
+    height: 90px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
 }
 
 /* Mobile Styles */
@@ -507,12 +521,11 @@ textarea {
     height: 120px;
   }
 
-  .level1-container{
-    margin-top: 5px;
-    margin-left: 1rem;
-    justify-content: space-around;
-    width: 460px;
-    height: 35px;
+  .level-container{
+    height: 90px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     flex-wrap: wrap;
   }
 }
